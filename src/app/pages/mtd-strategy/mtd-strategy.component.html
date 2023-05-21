@@ -1,0 +1,19 @@
+<!-- <nb-card>
+    <nb-card-header>
+
+    </nb-card-header>
+    <nb-card-body>
+        <nb-toggle status="primary" [(ngModel)]="enableAll" (checkedChange)="toggleStatus($event)">Abilita Tutto</nb-toggle>
+    </nb-card-body>
+</nb-card> -->
+
+<nb-card>
+    <nb-card-header>
+        Strategie MTD
+    </nb-card-header>
+    <nb-card-body>
+        <nb-toggle status="primary" [(ngModel)]="enableAll" (checkedChange)="toggleStatus($event)">Abilita Tutto</nb-toggle>
+        <ng2-smart-table [settings]="settings" [source]="source" (editConfirm)="editStrategy($event)">
+        </ng2-smart-table>
+    </nb-card-body>
+</nb-card>

@@ -1,0 +1,11 @@
+<nb-card>
+    <nb-card-header>
+      Deployments
+    </nb-card-header>
+  
+    <nb-card-body>
+      <ng2-smart-table [settings]="settings" [source]="source" (createConfirm)="createDeployment($event)" (editConfirm)="editDeployment($event)" (deleteConfirm)="deleteDeployment($event)">
+      </ng2-smart-table>
+    </nb-card-body>
+  </nb-card>
+
