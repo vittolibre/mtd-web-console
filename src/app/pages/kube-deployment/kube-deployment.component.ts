@@ -42,10 +42,6 @@ export class KubeDeploymentComponent implements OnInit {
         title: 'Nome',
         type: 'string',
       },
-      strategy: {
-        title: 'Strategia',
-        type: 'number',
-      },
       namespace: {
         title: 'Namespace',
         type: 'string',

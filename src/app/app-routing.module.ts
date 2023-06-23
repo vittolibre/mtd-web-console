@@ -45,7 +45,7 @@ export const routes: Routes = [
       },
     ],
   },
-  { path: '', redirectTo: 'pages/iot-dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: 'pages/home', pathMatch: 'full' },
   { path: '**', redirectTo: 'pages' },
 ];
 

@@ -3,12 +3,15 @@
     <a (click)="toggleSidebar()" href="#" class="sidebar-toggle">
       <nb-icon icon="menu-2-outline"></nb-icon>
     </a>
-    <a class="logo" href="#" (click)="navigateHome()">MTD <span>Cloud</span></a>
+    <a class="logo" href="#" (click)="navigateHome()">MTD Manager</a>
   </div>
-  <nb-select [selected]="currentTheme" (selectedChange)="changeTheme($event)" status="primary">
-    <nb-option *ngFor="let theme of themes" [value]="theme.value"> {{ theme.name }}</nb-option>
-  </nb-select>
+  
 </div>
+<div>
+    <nb-select [selected]="currentTheme" (selectedChange)="changeTheme($event)" status="primary">
+      <nb-option *ngFor="let theme of themes" [value]="theme.value"> {{ theme.name }}</nb-option>
+    </nb-select>
+  </div>
 
 <!-- <div class="header-container">
   <nb-actions size="small">

@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.scss'],
   template: `
     <span class="created-by">
-    <b>MTD Cloud App</b> 2023 by Vittorio Libretti
+    <b>MTD Manager App</b> 2023 by Vittorio Libretti
     </span>`
 })
 export class FooterComponent {
