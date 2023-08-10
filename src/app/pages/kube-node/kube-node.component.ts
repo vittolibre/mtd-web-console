@@ -13,6 +13,7 @@ export class KubeNodeComponent implements OnInit {
 
   nodeList = [];
   source: LocalDataSource = new LocalDataSource();
+  sourceEdge: LocalDataSource = new LocalDataSource();
 
   settings = {
     add: {
@@ -32,13 +33,13 @@ export class KubeNodeComponent implements OnInit {
       confirmDelete: true,
     },
     columns: {
-      id: {
-        title: 'ID',
-        type: 'number',
-        addable: false,
-        editable: false,
-        sortDirection: 'asc',
-      },
+      // id: {
+      //   title: 'ID',
+      //   type: 'number',
+      //   addable: false,
+      //   editable: false,
+      //   sortDirection: 'asc',
+      // },
       hostname: {
         title: 'Hostname',
         type: 'string',
@@ -85,8 +86,11 @@ export class KubeNodeComponent implements OnInit {
     private nodeService: KubeNodeService,
     private service: SmartTableData
   ) {
-    this.nodeService.getAllNodes().subscribe((data) => {
+    this.nodeService.getAllCloudNodes().subscribe((data) => {
       this.source.load(data);
+    });
+    this.nodeService.getAllEdgeNodes().subscribe((data) => {
+      this.sourceEdge.load(data);
     });
   }
 
@@ -107,7 +111,7 @@ export class KubeNodeComponent implements OnInit {
   editNode(event) {
     this.nodeService.updateNode(event.newData).subscribe(res => {
       event.confirm.resolve();
-      this.nodeService.getAllNodes().subscribe((data) => {
+      this.nodeService.getAllCloudNodes().subscribe((data) => {
         this.source.load(data);
       });
     },
@@ -125,5 +129,18 @@ export class KubeNodeComponent implements OnInit {
         alert(err.message)
       });
   }
+
+  editEdgeNode(event) {
+    this.nodeService.updateNode(event.newData).subscribe(res => {
+      event.confirm.resolve();
+      this.nodeService.getAllEdgeNodes().subscribe((data) => {
+        this.source.load(data);
+      });
+    },
+      (err: HttpErrorResponse) => {
+        alert(err.message)
+      });
+  }
+
 
 }

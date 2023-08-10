@@ -1,10 +1,21 @@
 <nb-card>
     <nb-card-header>
-      Nodi Cluster
+      Nodi Cloud
     </nb-card-header>
   
     <nb-card-body>
       <ng2-smart-table [settings]="settings" [source]="source" (createConfirm)="createNode($event)" (editConfirm)="editNode($event)" (deleteConfirm)="deleteNode($event)">
+      </ng2-smart-table>
+    </nb-card-body>
+  </nb-card>
+
+  <nb-card>
+    <nb-card-header>
+      Nodi Edge
+    </nb-card-header>
+  
+    <nb-card-body>
+      <ng2-smart-table [settings]="settings" [source]="sourceEdge" (createConfirm)="createNode($event)" (editConfirm)="editEdgeNode($event)" (deleteConfirm)="deleteNode($event)">
       </ng2-smart-table>
     </nb-card-body>
   </nb-card>

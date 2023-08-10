@@ -16,6 +16,14 @@ export class KubeNodeService {
     return this.http.get<[]>(this.nodeBaseUrl + '/all');
   }
 
+  getAllCloudNodes(){
+    return this.http.get<[]>(this.nodeBaseUrl + '/cloud/all');
+  }
+
+  getAllEdgeNodes(){
+    return this.http.get<[]>(this.nodeBaseUrl + '/edge/all');
+  }
+
   updateNode(newData: any) {
     return this.http.put(this.nodeBaseUrl, newData);
   }
